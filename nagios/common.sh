@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ENDPOINTS=http://192.168.113.254:8069
+ENDPOINTS=http://<monitor_ip>:8069
