@@ -1,5 +1,6 @@
 #!/bin/bash
-source ./common.sh "$1"
+pushd `dirname $BASH_SOURCE` > /dev/null; HOME=`pwd`; popd > /dev/null
+source $HOME/common.sh "$1"
 SERVICE=s3
 CURL=`which curl`
 JQ=`which curl`
