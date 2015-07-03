@@ -1,3 +1,3 @@
 #!/bin/bash
-
-ENDPOINTS=http://<monitor_ip>:8069
+NODE="$1"
+ENDPOINTS=http://$NODE:8069

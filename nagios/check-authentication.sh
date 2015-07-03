@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./common.sh
+source ./common.sh "$1"
 SERVICE=authentication
 CURL=`which curl`
 JQ=`which curl`
@@ -11,7 +11,7 @@ then
 	echo GREEN
 	exit 0
 else
-	echo WARNING
+	echo WARNING 
 	exit 1
 fi
 

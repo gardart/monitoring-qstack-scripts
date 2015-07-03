@@ -1,6 +1,5 @@
 #!/bin/bash
-set -x
-source ./common.sh
+source ./common.sh "$1"
 SERVICE=logstash
 CURL=`which curl`
 JQ=`which curl`

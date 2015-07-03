@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./common.sh
+source ./common.sh "$1"
 SERVICE=rabbitmq
 CURL=`which curl`
 JQ=`which curl`

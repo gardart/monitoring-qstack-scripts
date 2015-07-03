@@ -1,6 +1,6 @@
 #!/bin/bash
 # only use this script if using mongo replication, otherwise it will always fail
-source ./common.sh
+source ./common.sh "$1"
 SERVICE=mongodb/replSetGetStatus
 CURL=`which curl`
 JQ=`which curl`
