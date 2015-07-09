@@ -4,7 +4,7 @@ pushd `dirname $BASH_SOURCE` > /dev/null; HOME=`pwd`; popd > /dev/null
 source $HOME/common.sh "$1"
 SERVICE=mongodb/replSetGetStatus
 CURL=`which curl`
-JQ=`which curl`
+JQ=`which jq`
 
 # mongodb uses the field "ok" so that is our "success" field
 DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .ok)

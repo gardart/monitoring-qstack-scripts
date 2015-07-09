@@ -3,7 +3,7 @@ pushd `dirname $BASH_SOURCE` > /dev/null; HOME=`pwd`; popd > /dev/null
 source $HOME/common.sh "$1"
 SERVICE=identity
 CURL=`which curl`
-JQ=`which curl`
+JQ=`which jq`
 
 DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .success)
 

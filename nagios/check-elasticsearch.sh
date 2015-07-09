@@ -3,7 +3,7 @@ pushd `dirname $BASH_SOURCE` > /dev/null; HOME=`pwd`; popd > /dev/null
 source $HOME/common.sh "$1"
 SERVICE=elasticsearch
 CURL=`which curl`
-JQ=`which curl`
+JQ=`which jq`
 
 # ES data is relayed so "success" is named "status" there
 # es also uses colors instead of 1 or 0

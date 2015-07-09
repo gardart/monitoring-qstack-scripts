@@ -3,8 +3,7 @@ pushd `dirname $BASH_SOURCE` > /dev/null; HOME=`pwd`; popd > /dev/null
 source $HOME/common.sh "$1"
 SERVICE=haproxy
 CURL=`which curl`
-JQ=`which curl`
-# we use a lot of JQ to check if the "admin" frontend is up and open for business, this check can be copied for other services
+JQ=`which jq`
 DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq '.[] | select(."# pxname"=="admin")'|jq '. | select(."svname"=="FRONTEND")'|jq .status)
 
 if [ $DATA == "\"OPEN\"" ]
