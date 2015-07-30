@@ -5,8 +5,7 @@ SERVICE=mongodb/serverStatus
 CURL=`which curl`
 JQ=`which jq`
 
-# mongodb uses the field "ok" so that is our "success" field
-DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .ok)
+DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .success)
 
 if [ $DATA -eq 1 ]
 then

@@ -5,10 +5,9 @@ SERVICE=mysql
 CURL=`which curl`
 JQ=`which jq`
 
-# if we get more than 1 in uptime, it means mysql is at least answering us and returning data
-DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq -r .UPTIME)
+DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .success)
 
-if [ $DATA -gt 1 ]
+if [ $DATA -eq 1 ]
 then
 	echo GREEN
 	exit 0

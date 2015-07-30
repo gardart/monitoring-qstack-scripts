@@ -5,9 +5,10 @@ SERVICE=hybrid
 CURL=`which curl`
 JQ=`which jq`
 
-DATA=$($CURL -s $ENDPOINTS/$SERVICE | grep running | wc -l)
 
-if [ $DATA -gt 1 ]
+DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .success)
+
+if [ $DATA -eq 1 ]
 then
 	echo GREEN
 	exit 0

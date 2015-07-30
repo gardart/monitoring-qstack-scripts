@@ -5,11 +5,9 @@ SERVICE=elasticsearch
 CURL=`which curl`
 JQ=`which jq`
 
-# ES data is relayed so "success" is named "status" there
-# es also uses colors instead of 1 or 0
-DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq -r .status)
+DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .success)
 
-if [ $DATA == "green" ]
+if [ $DATA -eq 1 ]
 then
 	echo GREEN
 	exit 0

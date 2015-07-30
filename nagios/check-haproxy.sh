@@ -4,9 +4,10 @@ source $HOME/common.sh "$1"
 SERVICE=haproxy
 CURL=`which curl`
 JQ=`which jq`
-DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq '.[] | select(."# pxname"=="admin")'|jq '. | select(."svname"=="FRONTEND")'|jq .status)
 
-if [ $DATA == "\"OPEN\"" ]
+DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .success)
+
+if [ $DATA -eq 1 ]
 then
 	echo GREEN
 	exit 0
