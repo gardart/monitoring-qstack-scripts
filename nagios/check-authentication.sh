@@ -9,10 +9,10 @@ DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .success)
 
 if [ $DATA -eq 1 ]
 then
-	echo GREEN
+	echo OK
 	exit 0
 else
-	echo WARNING 
-	exit 1
+	echo CRITICAL 
+	exit 2
 fi
 
