@@ -6,7 +6,7 @@ CURL=`which curl`
 JQ=`which jq`
 
 
-DATA=$($CURL -s $ENDPOINTS/$SERVICE|jq .success)
+DATA=$($CURL -s $ENDPOINTS$SERVICE|jq .success)
 
 if [ $DATA -eq 1 ]
 then

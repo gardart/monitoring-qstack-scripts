@@ -1,7 +1,7 @@
 #!/bin/bash
 pushd `dirname $BASH_SOURCE` > /dev/null; HOME=`pwd`; popd > /dev/null
 source $HOME/common.sh "$1"
-SERVICE=mongodb/serverStatus
+SERVICE="mongodb/serverStatus"
 CURL=`which curl`
 JQ=`which jq`
 
